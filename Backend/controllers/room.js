@@ -38,14 +38,13 @@ export const updateRoom = async (req, res, next) => {
 };
 
 export const deleteRoom = async (req, res, next) => {
-  const hotelId = req.params.hotelId;
+  const hotelId = req.params.hotelid;
   try {
     await Room.findByIdAndDelete(req.params.id);
     try {
       await Hotel.findByIdAndUpdate(hotelId, {
-        $pull: { rooms: require.params.id },
+        $pull: { rooms: req.params.id },
       });
-      res.status(200).json(savedRoom);
     } catch (error) {
       next(error);
     }
