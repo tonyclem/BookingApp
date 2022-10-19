@@ -3,6 +3,7 @@ import express from "express";
 import connectDatabase from "./db/connect.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 // Router
 import authRoute from "./routes/auth.js";
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/hotels", hotelsRoute);
