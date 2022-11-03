@@ -6,8 +6,8 @@ export const createHotel = async (req, res, next) => {
   try {
     const savedHotel = await newHotel.save();
     res.status(200).json(savedHotel);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 export const updateHotel = async (req, res, next) => {
@@ -20,8 +20,8 @@ export const updateHotel = async (req, res, next) => {
       { new: true }
     );
     res.status(201).json(updatedHotel);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -29,16 +29,16 @@ export const deleteHotel = async (req, res, next) => {
   try {
     await Hotel.findByIdAndDelete(req.params.id);
     res.status(200).json({ msg: "Hotel has been deleted successfully" });
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 export const getHotel = async (req, res, next) => {
   try {
-    const hotels = await Hotel.findById(req.params.id);
-    res.status(200).json(hotels);
-  } catch (error) {
-    next(error);
+    const hotel = await Hotel.findById(req.params.id);
+    res.status(200).json(hotel);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -50,8 +50,8 @@ export const getHotels = async (req, res, next) => {
       cheapestPrice: { $gt: min | 1, $lt: max || 999 },
     }).limit(req.query.limit);
     res.status(200).json(hotels);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -64,8 +64,8 @@ export const countByCity = async (req, res, next) => {
       })
     );
     res.status(200).json(list);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -84,8 +84,8 @@ export const countByType = async (req, res, next) => {
       { type: "villas", count: villaCount },
       { type: "cabins", count: cabinCount },
     ]);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -98,7 +98,7 @@ export const getHotelRooms = async (req, res, next) => {
       })
     );
     res.status(200).json(list);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
