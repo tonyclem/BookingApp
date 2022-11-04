@@ -1,3 +1,4 @@
+import React from "react";
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
@@ -53,7 +54,10 @@ const Widget = ({ type }) => {
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
-            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+            style={{
+              backgroundColor: "rgba(0, 128, 0, 0.2)",
+              color: "green",
+            }}
           />
         ),
       };
@@ -81,18 +85,18 @@ const Widget = ({ type }) => {
   return (
     <div className="widget">
       <div className="left">
-        <span className="title">{data.title}</span>
+        <span className="title">{data?.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data?.isMoney && "$"} {amount}
         </span>
-        <span className="link">{data.link}</span>
+        <span className="link">{data?.link}</span>
       </div>
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
           {diff} %
         </div>
-        {data.icon}
+        {data?.icon}
       </div>
     </div>
   );
