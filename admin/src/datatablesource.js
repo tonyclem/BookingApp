@@ -11,7 +11,11 @@ export const userColumns = [
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img src={params.row.img} alt="avatar" className="cellImg" />
+          <img
+            src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"}
+            alt="avatar"
+            className="cellImg"
+          />
           {params.row.username}
         </div>
       );
@@ -23,103 +27,139 @@ export const userColumns = [
     width: 230,
   },
   {
-    field: "age",
+    field: "country",
     headerName: "Country",
     width: 100,
   },
   {
-    field: "status",
+    field: "city",
     headerName: "City",
     width: 100,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
+  },
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 100,
   },
 ];
 
-export const userRows = [
+export const hotelColumns = [
+  { field: "_id", headerName: "ID", width: 250 },
   {
-    id: 1,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    field: "name",
+    headerName: "Name",
+    width: 150,
   },
   {
-    id: 2,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "pending",
-    email: "1snow@gmail.com",
-    age: 35,
+    field: "type",
+    headerName: "Type",
+    width: 100,
   },
   {
-    id: 3,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    field: "title",
+    headerName: "Title",
+    width: 230,
   },
   {
-    id: 4,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "passive",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 5,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 6,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 7,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 8,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 9,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
-  },
-  {
-    id: 10,
-    username: "Snow",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    field: "city",
+    headerName: "City",
+    width: 100,
   },
 ];
+
+export const roomColumns = [
+  { field: "_id", headerName: "ID", width: 70 },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 230,
+  },
+  {
+    field: "desc",
+    headerName: "Description",
+    width: 200,
+  },
+  {
+    field: "price",
+    headerName: "Price",
+    width: 100,
+  },
+  {
+    field: "maxPeople",
+    headerName: "Max People",
+    width: 100,
+  },
+];
+
+// export const userRows = [
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "pending",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "passive",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+//   {
+//     username: "Snow",
+//     img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
+//     status: "active",
+//     email: "1snow@gmail.com",
+//     age: 35,
+//   },
+// ];
