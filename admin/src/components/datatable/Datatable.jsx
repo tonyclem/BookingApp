@@ -52,9 +52,9 @@ const Datatable = ({ columns }) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        {path}
         <Link
-          to="/users/new"
+          to={`/${path}/new`}
           style={{ textDecoration: "none" }}
           className="link"
         >
